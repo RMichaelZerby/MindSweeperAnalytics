@@ -1,0 +1,102 @@
+Process monitoring record descriptions
+
+
+"minesweepstats1.txt" records the results of games won
+
+W for win
+0000000090 total number of cells
+0,000,620.89 total time of play in Milliseconds
+0,000,006.90 time per cell in Milliseconds
+P process passes
+007 the number of passes
+G Guesses
+003 the number of gusses made
+S Sure things
+000 The number of sure things found
+C Count
+000 The number of cells uncovered as a result of a sure thing
+# game number
+00001 first game played
+
+Sample
+W 0000000090 0,000,620.89 0,000,006.90 P 007 G 003 S 000 C 000 # 00001
+
+
+"minesweepstats2.txt"  records the results of games won
+L for lost
+0000000089 number of cells solved for
+0000000090 total number of cells
+0,000,620.89 total time of play in Milliseconds
+0,000,006.90 time per cell in Milliseconds
+P process passes
+007 the number of passes
+G Guesses
+003 the number of gusses made
+S Sure things
+000 The number of sure things found
+C Count
+000 The number of cells uncovered as a result of a sure thing
+# game number
+00001 first game played
+
+Sample
+L 0000000089 0000000090 0,000,390.56 0,000,004.39 P 005 G 003 S 000 C 000 # 00004
+
+
+"minesweep.txt" records the state of lost games from the players view.
+
+Date and time of game
+The game number
+Game Board where 'C'overed; 'X' Deduced bomb and 'B'omb that lost the game.
+Count of uncovered cells and the number of cells to be uncovered
+Count of descovered bombs and the number of remainning bombs
+Count of guesses made
+Count of guesses that were a sure thing
+Count of cells uncovered as result of a sure thing
+"Add" Are the weighted elements used to make a guess with
+"Last guess included element" which element we are selecting from.
+"Guess Spread" diffrence between the lowest two weighted elements.
+"Last guess picked element with 3330000090 out of 1" the number of matching elements to select from.
+"Cells to pick from" break down of the element's adjoining cells 
+"Last guess picked  Row. 9 col. 2 out of 3 Pot 333" The cell as a guess that was a bomb
+List of guesses made.
+
+
+ 
+
+Sample
+1/17/2005 6:53:22 PM
+Game# 4
+0000001 0000000011
+0000002 000011101X
+0000003 00001X3221
+0000004 011112XX10
+0000005 01X1012210
+0000006 0111000000
+0000007 1221000000
+0000008 2XX1001110
+0000009 CB31001X21
+0000010 1C100012X1
+
+Count of uncovered 88 out of 90 = 2
+Count of bombs discovered 9 out of 10 = 1
+
+Count of guesses 3
+Number of Guesses that became a sure thing 0
+Number of cells uncovered as a sure thing 0
+
+Add 5000000070 Row 8 Col 1 Direct  minvaltot 500 nbr of 2
+Add 5000000082 Row 9 Col 3 Direct  minvaltot 500 nbr of 2
+Add 3330000090 Row 10 Col 1 Direct  minvaltot 333 nbr of 3
+Add 5000000092 Row 10 Col 3 Direct  minvaltot 500 nbr of 2
+Last guess including element 3330000090
+Guess Spread 167
+Last guess picked element with 3330000090 out of 1
+Cells to pick from @R9C1 bomb cnt 2 pot 333 pot 500
+Cells to pick from @R9C2 bomb cnt 4 pot 333 pot 500 pot 500 pot 500
+Cells to pick from @R10C2 bomb cnt 3 pot 333 pot 500 pot 500
+Last guess picked  Row. 9 col. 2 out of 3 Pot 333
+First guess is row 3 col. 2
+Guess picked  Row. 10 col. 1 out of 1 Pot 0
+Guess picked  Row. 9 col. 2 out of 3 Pot 333
+

@@ -1,0 +1,55 @@
+Game#1
+
+Total Rows 10   Cols 10First guess is row 6 col. 2
+* * * * * * * * * * * * * * * * * P a s s 0
+Bombs found 6
+Neutralized Cells 0
+Neutralized Bombs 0
+Player has deduced that there are 14 safe moves to make.
+Bombs found 6
+Guesses made 1
+Neutralized Cells 27
+Plays 15
+Neutralized Bombs 3
+Sure things 0
+* * * * * * * * * * * * * * * * * P a s s 1
+Bombs found 7
+Neutralized Cells 27
+Neutralized Bombs 3
+Player has deduced that there are 10 safe moves to make.
+Bombs found 7
+Guesses made 1
+Neutralized Cells 33
+Plays 25
+Neutralized Bombs 4
+Sure things 0
+* * * * * * * * * * * * * * * * * P a s s 2
+Bombs found 8
+Neutralized Cells 33
+Neutralized Bombs 4
+Player has deduced that there are 5 safe moves to make.
+Bombs found 8
+Guesses made 1
+Neutralized Cells 40
+Plays 30
+Neutralized Bombs 6
+Sure things 0
+* * * * * * * * * * * * * * * * * P a s s 3
+I have Won
+Bombs found 10
+Neutralized Cells 40
+Neutralized Bombs 6
+Player has deduced that there are 4 safe moves to make.
+Bombs found 10
+Guesses made 1
+Neutralized Cells 40
+Plays 34
+Neutralized Bombs 6
+Sure things 0
+Bombs found 10
+Guesses made 1
+Neutralized Cells 40
+Plays 34
+Neutralized Bombs 6
+Sure things 0
+Won

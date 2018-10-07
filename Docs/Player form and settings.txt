@@ -1,0 +1,37 @@
+The players form and elements
+
+"Number of iterations" is a numeric value of the number of games to play.
+
+"X Origin" is the number of cells that the x axis will contain or the number of columns.
+
+"X Step" is the number to increase the X Origin by for each consecutive play.
+
+"Y Origin" is the number of cells that the Y axis will contain or number of rows.
+
+"Y Step" is the number to increase the Y Origin by for each consecutive play.
+
+"Bomb Ratio" is the percentage of bombs the game will have.
+
+"URL OF SERVICE" is the URL of the game, where the default is the local machine.
+
+"Status" is the line where the status from the game is written (does not refresh during play so it does not work).
+
+Button "Start" connects to the Game.
+
+Button "Play" starts the action.
+ 
+default = tcp://localhost:5411/MindSweep
+
+where tcp is the service
+
+localhost is the local machine
+
+5411 is the port
+
+MindSweep is the service name
+
+port is the only thing you can change but must match that of the game.
+
+
+
+

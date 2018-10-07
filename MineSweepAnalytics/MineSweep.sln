@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MineSweep", "MineSweep.csproj", "{E16CB384-359F-44DF-A74C-26E11BD97585}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindSweep", "..\MindSweep\MindSweep.csproj", "{80F0513F-FAF4-45E3-B538-547D6526073F}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E16CB384-359F-44DF-A74C-26E11BD97585}.Debug.ActiveCfg = Debug|.NET
+		{E16CB384-359F-44DF-A74C-26E11BD97585}.Debug.Build.0 = Debug|.NET
+		{E16CB384-359F-44DF-A74C-26E11BD97585}.Release.ActiveCfg = Release|.NET
+		{E16CB384-359F-44DF-A74C-26E11BD97585}.Release.Build.0 = Release|.NET
+		{80F0513F-FAF4-45E3-B538-547D6526073F}.Debug.ActiveCfg = Debug|.NET
+		{80F0513F-FAF4-45E3-B538-547D6526073F}.Debug.Build.0 = Debug|.NET
+		{80F0513F-FAF4-45E3-B538-547D6526073F}.Release.ActiveCfg = Release|.NET
+		{80F0513F-FAF4-45E3-B538-547D6526073F}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

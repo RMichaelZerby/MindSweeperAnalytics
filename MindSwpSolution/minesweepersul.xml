@@ -1,0 +1,760 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindSwpSolution</name>
+    </assembly>
+    <members>
+        <member name="T:MindSwpSolution.PlayerLogicAndPlayerForm">
+            <summary>
+            Summary description for Form1.
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.PlayerLogicAndPlayerForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.PlayerLogicAndPlayerForm.#ctor">
+            <summary>
+            The form that I am using as a base of my application
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.PlayerLogicAndPlayerForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.PlayerLogicAndPlayerForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.PlayerLogicAndPlayerForm.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.PlayerLogicAndPlayerForm.getURL">
+            <summary>
+            Get the user defined URL
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MindSwpSolution.TrcDf">
+            <summary>
+            Tracing Display Targets
+            each string represents the name of a control on   
+            the display screen where the message is sent
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.TrcDf.Status">
+            <summary>
+            General status messages
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.TrcDf.SubStatus">
+            <summary>
+            General sub-status message
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.TrcDf.Plays">
+            <summary>
+            The number of plays we have made
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.TrcDf.NeutralizedCells">
+            <summary>
+            Number of neutralized cells 
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.TrcDf.BombsTot">
+            <summary>
+            Number of bombs the player has found
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.TrcDf.Guesses">
+            <summary>
+            Number of guesses the player has made.
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.TrcDf.NeutralizedBombs">
+            <summary>
+            Number of neutralized bombs the player has discovered
+            </summary>
+        </member>
+        <member name="T:MindSwpSolution.Dem">
+            <summary>
+            Internal variable store
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Dem.iTotRows">
+            <summary>
+            The total number of rows we are using
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Dem.iTotCols">
+            <summary>
+            The total number of columns 
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Dem.iTotBombs">
+            <summary>
+            The total number of bombs 
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Dem.arrShadowBombs">
+            <summary>
+            List of Shadow Bombs
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Dem.URL">
+            <summary>
+            The URL to use
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Dem.iGameID">
+            <summary>
+            The Current game as a number (debugging)
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Dem.bTraceLight">
+            <summary>
+            Tracing Level 1 Light
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Dem.bTraceMedium">
+            <summary>
+            Tracing Level 2 Medium
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Dem.bTraceDeep">
+            <summary>
+            Tracing Level 3 Deep
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Dem.bAnySurThing">
+            <summary>
+            Tracing Any Sure Things
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Dem.bAnySureThingExt">
+            <summary>
+            Tracing Any Sure Things Extra
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Dem.bCompInp">
+            <summary>
+            Composite Input File out puts
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Dem.bExcludeAnySureThing">
+            <summary>
+            A way to exclude the secondary measure of 'anySureThing' from the solution 
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Dem.bSureThing">
+            <summary>
+            Used to track when I guess vs a sure thing
+            </summary>
+        </member>
+        <member name="T:MindSwpSolution.player">
+            <summary>
+            This is the player and is where the logic for playing the MineSweeper game is located
+            ( MineSweeper P v.s. NP? in action )
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.player.tcpClientchannel">
+            <summary>
+            The tcp/ip channel to the game
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.player.gameObj">
+            <summary>
+            The current game object
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.player.lState">
+            <summary>
+            The state of the current game.
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.player.nbrNeutralizedBombs">
+            <summary>
+            The number of neutralized bombs
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.player.nbrUncovered">
+            <summary>
+            The number of uncovered squares
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.player.nbrNeutralized">
+            <summary>
+            The number of neutralized cells
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.player.nbrOfSelects">
+            <summary>
+            The number of cells uncovered by us selecting
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.player.nbrOfGuesses">
+            <summary>
+            The number of guesses we have made
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.player.nbrOfSureThings">
+            <summary>
+            The number of times Sure Thing was successful;
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.player.cntOfSureThings">
+            <summary>
+            The number of cells uncovered as a sure thing.
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.player.lastGuesses">
+            <summary>
+            Array of string of the current guesses being made (debugging)
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.player.myGuesses">
+            <summary>
+            Array of string of all the previous guesses made (debugging)
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.player.#ctor">
+            <summary>
+            Constructor that connects to the game interface, seen as the gameObj
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.player.play">
+            <summary>
+            The logic of playing the game
+            </summary>
+            <returns>true if we won the game</returns>
+        </member>
+        <member name="M:MindSwpSolution.player.deduceNewBombs(MindSwpSolution.ShadowCell)">
+            <summary>
+            First half of my deduction: 
+            Is to find all the bombs that I can, as follows:
+            For uncovered cells still in play where
+            the number of covered cells adjacent to this one  
+            are equal to the cells value. 
+            Then all the adjacent cells must be bombs!
+            Add this cell to the list of bombs.
+            
+            P.S.
+            If I find all the bombs, then I have won.
+            </summary>
+            <param name="sc1">All the uncovered cells still in play</param>
+            <returns>ArrayList of the remaining cells to uncover, If I have won</returns>
+        </member>
+        <member name="M:MindSwpSolution.player.deduceSafeCells">
+            <summary>
+            Second half of my deduction: 
+            Now that we know where some of the bomb(s) are.
+            I can see if the Bombs adjacent cell(s) value have been reduced to zero or neutralized (Bingo).
+            All of the cells surrounding a newly neutralized cell are also safe to uncover.
+            So let's start adding to our list of cells that we will be uncovering.
+            </summary>
+            <returns>ArrayList of cells that are not bombs</returns>
+        </member>
+        <member name="M:MindSwpSolution.player.anySureThings(System.Collections.SortedList)">
+            <summary>
+            This method is a secondary measure in solving the puzzle that I discovered while analyzing the results 
+            of my original testing.
+             
+            This method will analyze the list of inputs looking for a sure thing, (or inputs that can not be bombs).
+            This method looks for a consecutive series of inputs either vertically or horizontally aligned
+            then test to see if these inputs are tightly coupled. Tightly coupled inputs are pairs of 
+            inputs that are shared between a gate. Some of these series of inputs are solvable. As a result 
+            of this operation we may discover bombs. So I must also check to see if we have found the remaining 
+            bombs in play afterwards. If so then we will build the final list of sure things, because we have 
+            won this game. 
+            </summary>
+            <param name="slThreats">Sorted list of all the covered cells in play with a directly calculated potential</param>
+            <returns>ArrayList of cells that are sure things (cells that are not bombs).</returns>
+        </member>
+        <member name="M:MindSwpSolution.player.MyBestGuess">
+            <summary>
+            The logic to make a guess as to which cell to uncover.
+            Based on the average potential threat of the cells being a bomb.
+            In certain cases the pattern of cells gives away the bombs position. 
+            In which case this is no longer a guess and we can have more then one 
+            cell returned.
+            </summary>
+            <returns>ArrayList of cells that are sure things (cells that are not bombs).</returns>
+        </member>
+        <member name="M:MindSwpSolution.player.MyRand(System.Int32)">
+            <summary>
+            Wrapper the random function, so I can vary it if necessary
+            </summary>
+            <param name="limit">the value to stay under</param>
+            <returns>the random value</returns>
+        </member>
+        <member name="M:MindSwpSolution.player.ConnectTheBytes(System.Byte[])">
+            <summary>
+            Constructs an integer out of an array of bytes
+            </summary>
+            <param name="arv">the array of bytes to be used</param>
+            <returns>integer value</returns>
+        </member>
+        <member name="T:MindSwpSolution.InputStates">
+            <summary>
+            A method of reflecting the change in state back to the gates that own the input.
+            </summary>
+        </member>
+        <member name="T:MindSwpSolution.Input">
+            <summary>
+            A input being shared between gates of that make up the composite input.
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Input.InpSetOwners">
+            <summary>
+            The list of gates that are associated to this input.
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.Input.#ctor(MindSwpSolution.ShadowCell,MindSwpSolution.Gate,MindSwpSolution.CompositeInput)">
+            <summary>
+            Creates a new Input for the composite input set.
+            </summary>
+            <param name="sc">ShadowCell as input</param>
+            <param name="myGate">Associated Gate</param>
+            <param name="cmpInput">Owning Composite input</param>
+        </member>
+        <member name="M:MindSwpSolution.Input.AddOwner(MindSwpSolution.Gate)">
+            <summary>
+            Adds a gate to the set of owners for this input.
+            </summary>
+            <param name="myGate"></param>
+        </member>
+        <member name="M:MindSwpSolution.Input.DelOwner(MindSwpSolution.Gate)">
+            <summary>
+            Deletes a gate from the set of owners
+            </summary>
+            <param name="myGate"></param>
+        </member>
+        <member name="T:MindSwpSolution.InputSet">
+            <summary>
+            A group of inputs of a gate of a composite input.
+            </summary>
+        </member>
+        <member name="T:MindSwpSolution.InputSet.States">
+            <summary>
+            Unknown not solved for; Solved state known; Removed AND with one or more input low, 
+            </summary>
+        </member>
+        <member name="T:MindSwpSolution.GateState">
+            <summary>
+            Provides a method to reflect the gates state change back to the composite input. 
+            </summary>
+        </member>
+        <member name="T:MindSwpSolution.Gate">
+            <summary>
+            A gate that contains the set of inputs that we are attempting to solve.
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Gate.tciputs">
+            <summary>
+            The list of tightly coupled input associated with this gate.
+            </summary>
+        </member>
+        <member name="T:MindSwpSolution.Gate.Operators">
+            <summary>
+            The types of operator that a gate can have
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Gate.bSolved">
+            <summary>
+            Has this gate been solved
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Gate.sc">
+            <summary>
+            The shadowcell of this gate 
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Gate.myOperator">
+            <summary>
+            The type of gate myOperator { AND, OR, NA } 
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Gate.unionsOfAndPrv">
+            <summary>
+            The related unions of InputSets of tightly coupled AND gates (for a prevous relationship). 
+            (related unions as indexed pairs {0u1},{1u2},{2u0})
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Gate.unionsOfAndLtr">
+            <summary>
+            The related unions of InputSets of tightly coupled AND gates (for a latter relationship). 
+            (related unions as indexed pairs {1u0},{0u2},{2u1})
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Gate.arInputSets">
+            <summary>
+            Array of InputSets this gate references
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Gate.arInputs">
+            <summary>
+            Array of Inputs this gate references
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Gate.compInput">
+            <summary>
+            The CompositeInput that owns this gate
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.Gate.#ctor(MindSwpSolution.CompositeInput)">
+            <summary>
+            The constructor
+            </summary>
+            <param name="cmpInp"></param>
+        </member>
+        <member name="M:MindSwpSolution.Gate.InputChange(MindSwpSolution.Input)">
+            <summary>
+            Reflects changes to the inputs of this gate
+            </summary>
+            <param name="iPut"></param>
+        </member>
+        <member name="T:MindSwpSolution.CompositeInput">
+            <summary>
+            The composite input made up of two or more gates and their inputs.
+            Used to analyze the complex relations between gates that are tightly coupled.
+            In the hope of determining the states of the inputs.
+            </summary>
+        </member>
+        <member name="T:MindSwpSolution.CompositeInput.Orientations">
+            <summary>
+            The list of orientations inputs we have
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.CompositeInput.orientation">
+            <summary>
+            The orientation of the inputs being solved.
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.CompositeInput.alGates">
+            <summary>
+            The temporary list of gates that make up this composite input.
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.CompositeInput.slGates">
+            <summary>
+            The final sorted list of gates that make up this composite input
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.CompositeInput.iCntSolvedGates">
+            <summary>
+            The Count of gates that have been solved
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.CompositeInput.slCoupledCompositeInputs">
+            <summary>
+            The unique list of tightly coupled inputs that make up the composite input
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.CompositeInput.slUnCoupledCompositeInputs">
+            <summary>
+            The unique list of tightly coupled inputs that make up the composite input
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.CompositeInput.SolvedInputs">
+            <summary>
+            The list of solved inputs as shadowCellsRowCol.
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.CompositeInput.AddSolvedInput(MindSwpSolution.Input)">
+            <summary>
+            Add an input to the list of safe inputs to select.
+            Safe Inputs are deemed to be off or not a bomb.
+            </summary>
+            <param name="iPut">Input = Off</param>
+        </member>
+        <member name="M:MindSwpSolution.CompositeInput.Solved">
+            <summary>
+            Finished when all the gates solved.
+            </summary>
+            <returns>true if all the gates have been solved</returns>
+        </member>
+        <member name="M:MindSwpSolution.CompositeInput.#ctor(System.Collections.SortedList,MindSwpSolution.CompositeInput.Orientations)">
+            <summary>
+            Constructs a composite input of all of the uniquely tightly coupled inputs given.
+            Inputs are bound to sub sets of logical gates of type 'AND' and 'OR'.
+            We are some times able to deduce some or all of the inputs states using the 
+            rules of 'Not OR';'NOT And' and 'Compound ANDS'
+            </summary>
+            <param name="cGates">The list of gates that makeup the composite input</param>
+            <param name="orientation">The orientation of the gates being solved</param>
+        </member>
+        <member name="M:MindSwpSolution.CompositeInput.AreInputsCoupled(MindSwpSolution.Input,MindSwpSolution.Input)">
+            <summary>
+            Test two Input to see if they share at least one pair of Owners. If They share at least one pair. 
+            They are considered to be tightly coupled.
+            </summary>
+            <param name="first">First Input</param>
+            <param name="second">Second Input</param>
+            <returns>true when inputs share a pair of owners</returns>
+        </member>
+        <member name="M:MindSwpSolution.CompositeInput.AreGatesCoupled(System.Collections.SortedList,System.Int32,System.Int32)">
+            <summary>
+            Test two gates from the sortedlist to see if they share at least a pair of inputs
+            </summary>
+            <param name="slGates">Sorted List of Gates</param>
+            <param name="first">First gate's index</param>
+            <param name="second">Second gate's index</param>
+            <returns></returns>
+        </member>
+        <member name="M:MindSwpSolution.CompositeInput.FindSharedInputs(MindSwpSolution.ShadowCell,MindSwpSolution.ShadowCell,MindSwpSolution.CompositeInput.Orientations)">
+            <summary>
+            Find the covered inputs that the two gates share ordered by orientation
+            </summary>
+            <param name="scWouldBeGate1">The first gate to compare with</param>
+            <param name="scWouldBeGate2">The second gate to compare against</param>
+            <param name="orient">The orientation </param>
+            <returns>Array of shared inputs ordered by orientation</returns>
+        </member>
+        <member name="T:MindSwpSolution.Pos">
+            <summary>
+            Pos of the cell in Row and Column.
+            The position are all translated to ones based indexing
+            to accommodate the math.
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Pos.Row">
+            <summary>
+            Cells Row or relative Y axis (1-n)
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.Pos.Col">
+            <summary>
+            Cells Columns or relative X axis (1-n)
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.Pos.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Create a position given the absolute Row and Column 
+            </summary>
+            <param name="C">Column</param>
+            <param name="R">Row</param>
+        </member>
+        <member name="M:MindSwpSolution.Pos.#ctor(System.Int32)">
+            <summary>
+            Create a position given the zero base index of cells that is based on Row and Column order 
+            </summary>
+            <param name="idx">index of the cell</param>
+        </member>
+        <member name="M:MindSwpSolution.Pos.ToIndexRowCol">
+            <summary>
+            Returns the zero base index for the cell by Row and Column 
+            </summary>
+            <returns>Index of this cell (Horizontal)</returns>
+        </member>
+        <member name="M:MindSwpSolution.Pos.ToIndexColRow">
+            <summary>
+            Returns the zero base index for the cell by Column and Row 
+            </summary>
+            <returns>Index of this cell (Vertical)</returns>
+        </member>
+        <member name="M:MindSwpSolution.Pos.GetRow">
+            <summary>
+            Returns the Row 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MindSwpSolution.Pos.GetCol">
+            <summary>
+            Returns the Column 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MindSwpSolution.ShadowCell">
+            <summary>
+            Is used to keep trackof the status of the cells in the game.
+            </summary>
+        </member>
+        <member name="T:MindSwpSolution.ShadowCell.Orientations">
+            <summary>
+            orientation in the matrix
+            </summary>
+        </member>
+        <member name="T:MindSwpSolution.ShadowCell.CurState">
+            <summary>
+            The states of a cell
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.ShadowCell.shadowCellsRowCol">
+            <summary>
+            The array of shadowCells in order of row and column
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.ShadowCell.cPos">
+            <summary>
+            The position of this cell in the matrix.
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.ShadowCell.isBombPlayedOut">
+            <summary>
+            true when all of the surrounding cells are known, and 
+            helps to reduce the number of nested iterations we make 
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.ShadowCell.cntOfAdjBombs">
+            <summary>
+            The number of cells whose state is known to be a bomb
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.ShadowCell.cntOfAdjCvrdCells">
+            <summary>
+            The number of adjacent cells whose state is unknown.
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.ShadowCell.State">
+            <summary>
+            The current state of this cell
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.ShadowCell.Display">
+            <summary>
+            The display for this cell
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.ShadowCell.adjCellsRowCol">
+            <summary>
+            This is the array of adjacent cells to this one ordered by Row and Column. 
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.ShadowCell.adjCellsColRow">
+            <summary>
+            This is the array of adjacent cells to this one ordered by Column and Row. 
+            </summary>
+        </member>
+        <member name="F:MindSwpSolution.ShadowCell.bombPotentials">
+            <summary>
+            The temporary list of potential threats this cell is associated with
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.#ctor(System.Int32)">
+            <summary>
+            Create a reference to the cell at the given index  
+            </summary>
+            <param name="idx"></param>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.decAdjCoveredCells">
+            <summary>
+            Decrements the number of covered cells.
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.hookAdjCells">
+            <summary>
+            Builds the list of adjacent squares to this one
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.incAdjBombs">
+            <summary>
+            Increment the count of adjacent bombs to me 
+            </summary>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.isTightlyCoupled(MindSwpSolution.ShadowCell,MindSwpSolution.ShadowCell,System.Collections.SortedList@,MindSwpSolution.ShadowCell.Orientations)">
+            <summary>
+            Checks to see if two inputs share at lease two gates, while collecting the tightly 
+            coupled.
+            </summary>
+            <param name="inp1">input one</param>
+            <param name="inp2">input two</param>
+            <param name="cGates">The references to the array of coupled gates</param>
+            <param name="Orentation">The orientation of the gates</param>
+            <returns>true when the inputs share two or more gates</returns>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.setDisplay(System.Char)">
+            <summary>
+            Sets the display value and will
+            throw a logic error to indicate an error from game server or we have a bomb showing 
+            </summary>
+            <param name="c">the charactor of the display</param>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.getCountOfAdjBombs">
+            <summary>
+            Returns the count of adjacent cells that have a state of bomb
+            </summary>
+            <returns>count adjacent cells with a state of being a bomb</returns>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.getCountOfAdjCoveredCells">
+            <summary>
+            Returns the count of adjacent cells that have a state of unknown.
+            </summary>
+            <returns>Count of adjacent covered cells</returns>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.getDisplay">
+            <summary>
+            Return the state of the display
+            </summary>
+            <returns>Character from Display</returns>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.getState">
+            <summary>
+            Returns the current state of this cell
+            </summary>
+            <returns>ShadowCell.CurState State</returns>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.setState(MindSwpSolution.ShadowCell.CurState)">
+            <summary>
+            Sets the state of the cell; 
+            decrements the number of adjacent covered cells and increments the number of bombs. 
+            </summary>
+            <param name="CS">ShadowCell.CurState</param>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.getPosAsIndexRowCol">
+            <summary>
+            Gets the position of the cell as an index ordered by row and column 
+            </summary>
+            <returns>Index (Horizontal)</returns>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.getPosAsIndexColRow">
+            <summary>
+            Gets the position of the cell as an index ordered by column and row. 
+            </summary>
+            <returns>Index (Vertical)</returns>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.getPos">
+            <summary>
+            Gets the position of the cell as a Pos object
+            </summary>
+            <returns>Pos object</returns>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.getCalculatedValue">
+            <summary>
+            Gets the cells calculated value by subtracting it's display value from the number of adjacent bombs discovered.
+            </summary>
+            <returns>Adjusted value for the display</returns>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.getAdjCells">
+            <summary>
+            Gets the array of adjacent cells ordered by row and column 
+            </summary>
+            <returns>List of adjacent cells (Horizontal)</returns>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.getAdjCellsByRowCol">
+            <summary>
+            Gets the array of adjacent cells ordered by row and column.
+            This is the same as getadjCells and is defined for clarity only.  
+            </summary>
+            <returns>List of adjacent cells (Vertical)</returns>
+        </member>
+        <member name="M:MindSwpSolution.ShadowCell.getAdjCellsByColRow">
+            <summary>
+            Gets the array of adjacent cells ordered by column and row. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MindSwpSolution.MyTraceListener">
+            <summary>
+            MyTraceListener forwards tracing messages from the Mindsweep Dll to the textbox 
+            class passes to it in its constructor.
+            </summary>
+        </member>
+    </members>
+</doc>

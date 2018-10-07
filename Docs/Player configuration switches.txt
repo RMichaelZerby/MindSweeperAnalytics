@@ -1,0 +1,23 @@
+Tracing and debugging switches are located in the file MindSwpSolution.exe.config
+
+MindSwpSolution.exe.config <add name="CompositeInput"  value="1" /> creates
+CompositeInput1.txt - file - player records the composite gates; inputs and solvability.
+
+MindSwpSolution.exe.config <add name="TraceLight" value="1" /> creates
+TraceGame????.txt - file - player traces the act of playing the game, recording passes and variables.
+MindSwpSolution.exe.config <add name="TraceMedium" value="1" /> creates
+TraceGame????.txt - file - Adds messages for the primary subroutines.
+MindSwpSolution.exe.config <add name="TraceDeep" value="1" /> creates
+TraceGame????.txt - file - Adds the act of solving the composite gates. 
+
+MindSwpSolution.exe.config <add name="ExcludeAnySureThing" value="0" /> 
+This method is a secondary measure in solving the puzzle that I discovered while analyzing the results of my original testing and can be disabled
+
+MindSwpSolution.exe.config <add name="AnySureThing" value="1" /> 
+Adds tracing to the additional logic of AnySureThing
+
+
+MindSwpSolution.exe.config <add name="AnySureThingExtra" value="0" />
+Adds extra tracing to the additional logic of AnySureThing 
+
+

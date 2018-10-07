@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindSwpSolution", "MindSwpSolution.csproj", "{98BE2429-6F32-4B92-8F5D-FAF8234B1D22}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{98BE2429-6F32-4B92-8F5D-FAF8234B1D22}.Debug.ActiveCfg = Debug|.NET
+		{98BE2429-6F32-4B92-8F5D-FAF8234B1D22}.Debug.Build.0 = Debug|.NET
+		{98BE2429-6F32-4B92-8F5D-FAF8234B1D22}.Release.ActiveCfg = Release|.NET
+		{98BE2429-6F32-4B92-8F5D-FAF8234B1D22}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="StarOffice 7  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Mike Zerby">
+	<META NAME="CREATED" CONTENT="20050119;20491377">
+	<META NAME="CHANGEDBY" CONTENT="Mike Zerby">
+	<META NAME="CHANGED" CONTENT="20051227;12395059">
+	<STYLE>
+	<!--
+		@page { size: 8.5in 11in; margin-left: 1.25in; margin-right: 1.25in; margin-top: 1in; margin-bottom: 1in }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<P STYLE="margin-bottom: 0in"><FONT SIZE=4 STYLE="font-size: 15pt"><B>Outline
+of the Players Logic</B></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT SIZE=3>Outline of the play</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+1 Initialize the game interface</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+2 Initialize the game configuration</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+3 Begin the game</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+4 Initial guess of any cell</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+5 While we are still playing the game</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+5.1 Read the array of cells from the game interface</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+5.2 For all the cells in the array read 
+</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+5.3 Update the corresponding shadow cell's display</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+5.3.1 If the cell has changed its display state</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+5.3.1.1 For all the adjacent cells</P>
+<P STYLE="margin-left: 0.98in; text-indent: -0.2in; margin-bottom: 0in">
+5.3.1.1.1 Subtract one from number of adjacent cells that are covered</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+5.3.2 If the cell is in play and is uncovered</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+5.3.2.1 Add this cell to the list of uncovered cells</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+5.4 If there are any uncovered cells found</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+5.4.1 For all the uncovered cells discovered</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+5.4.1.1 &quot;Find New Bombs&quot; 
+</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+5.4.2 If we found all the bombs</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+5.4.2.1 For all the remaining covered cells that are not bombs</P>
+<P STYLE="margin-left: 0.98in; text-indent: -0.2in; margin-bottom: 0in">
+5.4.2.1.1 Select this cell through the game interface</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+5.4.2.2 Then I've won (go to step 5.7 )</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+5.4.3 If we have found any new bombs</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+5.4.3.1 &quot;Find New Safe Cells&quot;</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+5.5 If there were any safe cells found</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+5.5.1 For all the safe cells found</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+5.5.1.1 Select the cell, through the game interface</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+5.6 If there were no safe cell found</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+5.6.1 &quot;Make A Guess&quot;</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+5.6.2 Select the guessed cell(s), through the game interface</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+5.7 If I am not still playing(won or lost)</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+5.7.1 Write out the results of the game.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT SIZE=3>Outline of &quot;Find New
+Bombs&quot;</FONT></P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+1 Count the number of adjacent covered cells to this one</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+2 If the count of covered cells is equal to the cell's value</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+2.1 For all the adjacent covered cell</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+2.1.1 Add this cell to the list of bombs</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+2.1.2 Mark this cell as a bomb</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+2.1.3 For all adjacent cells of the bomb 
+</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+3 Increment the adjacent bomb count</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT SIZE=3>Outline of &quot;Find New
+Safe Cells&quot; </FONT>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+1 For all the bombs I have found</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+2 If the bomb is still in play (not neutralized)</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+2.1 For all the cells adjacent to the bomb</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+2.2 If the cell is in play (uncovered and not neutralized)</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+2.2.1 If the cell's value is reduced to zero</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+2.2.1.1 Mark this cell as not in play (or neutralized)</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+2.2.1.2 For all the cells adjacent to this one.</P>
+<P STYLE="margin-left: 0.98in; text-indent: -0.2in; margin-bottom: 0in">
+2.2.1.2.1 If the cell is covered and not a bomb</P>
+<P STYLE="margin-left: 1.18in; text-indent: -0.2in; margin-bottom: 0in">
+2.2.1.2.1.1 Add it to the list of safe cells to uncover</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+2.2.1.3 If all the adjacent cells to the bomb are no longer in play 
+</P>
+<P STYLE="margin-left: 0.98in; text-indent: -0.2in; margin-bottom: 0in">
+2.2.1.3.1 Mark this bomb as not in play (or neutralized)</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+3 Return the new list of safe cells.</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+<FONT SIZE=3>Outline of &quot;Make A Guess&quot;</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+1 For all the cells</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+1.1 If the cell is still covered and not a bomb.</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+1.1.1 For all adjacent cells</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+1.1.1.1 If the cell has a value (poses a threat)</P>
+<P STYLE="margin-left: 0.98in; text-indent: -0.2in; margin-bottom: 0in">
+1.1.1.1.1 Lowest value of bomb threat 
+</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+1.1.2 If this cell has a direct bomb threat</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+1.1.2.1 Collect the cell with the lowest threat to the sorted list of
+direct threats</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+1.1.3 If this cell does not have a direct bomb threat</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+1.1.3.1 Collect this cell to the list of cells with an indirect
+threat</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+2 &quot;Any Sure Things&quot;</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+3 If we did not find any sure things</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+3.1 Calculate the minimum bomb threat for indirect cells</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+3.2 For all the cells in the indirect threat</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+3.2.1 Add or replace this cell to the sorted list of key as minimum
+threat</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+3.3 For all the cells in the ascending sorted list</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+3.3.1 If the value of this cell is the same as the first cell in the
+list.</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+3.3.1.1 Increment the count of cells to choose from.</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+3.3.2 Else</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+3.3.2.1 Stop the search</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+3.4 Randomly pick a cell from the cells to choose from</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+3.5 Return the cell we have guessed has the lowest threat</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+4 Return list of sure things</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">Outline of &quot;Any Sure Things&quot;</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+1 For all the input with a direct threat aligned horizontally</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+1.1 Collect consecutive covered cells as series of inputs</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+1.2 Convert the consecutive input into coupled gates</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+1.3 &quot;Composite Input&quot; - using coupled gates</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+2 If we have not discovered all the bombs</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+2.1 For all the input with a direct threat aligned vertically</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+2.1.1 Collect consecutive covered cell as series of inputs</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+2.1.2 Convert the consecutive input into coupled gates</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+2.1.3 &quot;Composite Input&quot; - using coupled gates</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+3 If we have discovered all the bombs</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+3.1 return the list of all the cells that are not bombs (Then I've
+won)</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+4 Return list of solved inputs 
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT SIZE=3>Outline of &quot;Composite
+Input&quot; </FONT>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+1 For the set consecutive covered cells 
+</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+1.1 Create a keyed gate of type OR; AND or NONE</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+1.2 If the gate is of type OR or AND</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+1.2.1 For all the adjacent cells that are covered</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+1.2.1.1 Create a keyed input orientation opposite to the gates</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+1.2.1.2 Add the inputs to the gate</P>
+<P STYLE="margin-left: 0.79in; text-indent: -0.2in; margin-bottom: 0in">
+1.2.1.3 If the gate expresses a unique set of inputs</P>
+<P STYLE="margin-left: 0.98in; text-indent: -0.2in; margin-bottom: 0in">
+1.2.1.3.1 Add this gate to the set of gates</P>
+<P STYLE="margin-left: 0.98in; text-indent: -0.2in; margin-bottom: 0in">
+1.2.1.3.2 Add any new inputs to the set of inputs</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+2 For the set of inputs that share two or more gates</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+2.1 Mark the input as tightly coupled</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+3 For the set of gates</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+3.1 Create a key for this gate based its inputs that are tightly
+coupled</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+3.2 If this gate has a key comprised of more then one input</P>
+<P STYLE="margin-left: 0.59in; text-indent: -0.2in; margin-bottom: 0in">
+3.2.1 Add this gate to the list of gates to solve for</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+4 For all the gates to be solved for</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.2in; margin-bottom: 0in">
+4.1 Deduce inputs states</P>
+<P STYLE="margin-left: 0.2in; text-indent: -0.2in; margin-bottom: 0in">
+5 Return the list of solved inputs</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+</BODY>
+</HTML>
